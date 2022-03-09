@@ -1,0 +1,32 @@
+config:
+  images_path: "data/kitti/05/image_0/"
+  K_path: "data/kitti/05/K.txt"
+  basline_images: [0,7]
+  resize: True
+  Initialization:
+    ShiTomasi_params:
+      maxCorners: 1000
+      qualityLevel: 0.01
+      minDistance: 7
+      blockSize: 7
+    KLT_params: 
+      winSize: [49, 49]
+      maxLevel: 7
+      EPS: 10
+      COUNT: 0.03
+
+  Continuous:
+    ShiTomasi_params:
+      maxCorners: 1000
+      qualityLevel: 0.001
+      minDistance: 20
+      blockSize: 20
+    KLT_params: 
+      winSize: [49, 49]
+      maxLevel: 1
+      EPS: 10
+      COUNT: 0.03
+    angle_threshold: 1
+    remove_similar: False # boolean value
+    plot_x_scale: [10, 10]
+    plot_y_scale: [0, 2]
